@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -16,10 +16,24 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <main className="flex min-h-screen items-center justify-center px-4">
+    <main className="flex min-h-screen flex-col items-center justify-center gap-6 px-4">
       <h1 className="text-center text-4xl font-bold tracking-tight text-foreground">
         Test stockage ABIIF
       </h1>
+      <nav className="flex gap-4">
+        <Link
+          to="/chants"
+          className="rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+        >
+          Chants
+        </Link>
+        <Link
+          to="/photos"
+          className="rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+        >
+          Photos
+        </Link>
+      </nav>
     </main>
   );
 }
